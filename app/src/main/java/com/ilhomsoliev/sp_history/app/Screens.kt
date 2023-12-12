@@ -8,9 +8,15 @@ sealed class Screens(val route: String) {
     data object Info : Screens("Info")
     data object Main : Screens("Main")
 
-    data object Login : Screens("Login/{isLoginOpened}") {
-        fun buildRoute(isLoginOpened: Int): String = "Login/${isLoginOpened}"
-        fun getIsLoginOpened(entry: NavBackStackEntry): Boolean =
-            (entry.arguments!!.getString("isLoginOpened") ?: "0") == "1"
+    data object DetailsScreen : Screens("Details/{personId}") {
+        fun buildRoute(personId: Int): String =
+            "Details/${personId}"
+
+        fun getPersonId(entry: NavBackStackEntry): Int =
+            entry.arguments!!.getString("personId")?.toInt()
+                ?: throw IllegalArgumentException("personId argument missing.")
+
+
     }
+
 }

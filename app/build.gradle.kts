@@ -2,8 +2,6 @@ plugins {
     id("com.android.application")
     kotlin("android")
     id("org.jetbrains.kotlin.plugin.serialization") apply true
-    id("com.google.gms.google-services")
-    id("com.google.firebase.crashlytics")
     kotlin("kapt")
 
 }
@@ -29,7 +27,6 @@ android {
 }
 
 dependencies {
-    implementation("com.github.GrenderG:Toasty:1.5.2")
     implementation("com.google.android.material:material:1.10.0")
     androidBase()
     compose()
@@ -50,6 +47,8 @@ dependencies {
     implementation("androidx.browser:browser:1.6.0")
     // GSON
     implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.google.maps.android:maps-compose:4.3.0")
 
+    // AIzaSyDZayHwzxKWW1ElWAJeXwMZyCOVDX39014
 }
 
